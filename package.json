@@ -49,5 +49,6 @@
   },
   "resolutions": {
     "string-width": "4.2.3"
-  }
+  },
+  "version": "0.0.0"
 }
