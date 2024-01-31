@@ -50,13 +50,14 @@ yarn generate
 ```
 
 Apply migrations
+> Remove `--local` when you want execute for production
 ```
-npx wrangler d1 execute demo-from-pages --file=app/db/drizzle/0000_known_fixer.sql
+npx wrangler d1 execute demo-from-pages --file=app/db/drizzle/0000_known_fixer.sql --local
 ```
 
 Insert a row for testing:
 ```
-npx wrangler d1 execute demo-from-pages --command  "INSERT INTO users (email, name, username) VALUES ('me@site.com', 'Me', 'username');"
+npx wrangler d1 execute demo-from-pages --command  "INSERT INTO users (email, name, username) VALUES ('me@site.com', 'Me', 'username');"  --local
 ```
 
 Read
@@ -68,6 +69,7 @@ npx wrangler d1 execute demo-from-pages --command  "select * from users limit 1;
 Finally, run the following commands to start the development server:
 
 ```
+yarn pages:watch
 yarn pages:dev
 ```
 

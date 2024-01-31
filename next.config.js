@@ -25,9 +25,9 @@ if (process.env.NODE_ENV === "development") {
   // call the utility with the bindings you want to have access to
   setupDevBindings({
     bindings: {
-      MY_KV: {
-        type: "kv",
-        id: "MY_KV",
+      DB: {
+        type: "D1Database",
+        id: "226f2354-d837-40e1-9957-94941fc47967",
       }
     }
   });
