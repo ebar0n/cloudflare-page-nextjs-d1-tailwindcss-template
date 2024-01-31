@@ -2,6 +2,11 @@
 import { Card, Title, Text } from '@tremor/react';
 import Search from './search';
 import UsersTable from './table';
+import { drizzle } from 'drizzle-orm/d1'
+import { sql } from 'drizzle-orm';
+import { UserTable } from './db/schema'
+
+export const runtime = 'edge';
 
 interface User {
   id: number;
@@ -10,19 +15,29 @@ interface User {
   email: string;
 }
 
+// interface Env {
+//   DB: D1Database;
+// }
+
 export default async function IndexPage({
   searchParams
 }: {
   searchParams: { q: string };
 }) {
   const search = searchParams.q ?? '';
-  // const result = await sql`
-  //   SELECT id, name, username, email
-  //   FROM users
-  //   WHERE name ILIKE ${'%' + search + '%'};
-  // `;
-  // const users = result.rows as User[];
-  const users: User[] = [];
+
+  // const db = process.env.DB;
+  // const stmt = db.prepare('SELECT * FROM users');
+	// const {results} = await stmt.all();
+  // console.log(results);
+
+  const db = drizzle(process.env.DB)
+
+  let query = db.select().from(UserTable).where(sql`${UserTable.name} LIKE ${`%${search}%`}`);
+
+  const results = await query
+
+  const users = results as User[] ?? [];
 
   return (
     <main className="p-4 md:p-10 mx-auto max-w-7xl">
