@@ -5,7 +5,9 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "next lint"
+    "lint": "next lint",
+    "pages:build": "npx @cloudflare/next-on-pages",
+    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2023-12-18 --compatibility-flag=nodejs_compat"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -16,13 +18,11 @@
     "@types/react": "18.2.33",
     "@types/react-dom": "18.2.14",
     "@vercel/analytics": "^1.1.1",
-    "@vercel/postgres": "^0.5.0",
     "autoprefixer": "^10.4.16",
     "eslint": "8.52.0",
     "eslint-config-next": "14.0.0",
     "js-cookie": "^3.0.5",
     "next": "14.0.0",
-    "next-auth": "5.0.0-beta.3",
     "postcss": "^8.4.31",
     "prettier": "^3.0.3",
     "prop-types": "^15.8.1",
@@ -37,5 +37,9 @@
     "singleQuote": true,
     "tabWidth": 2,
     "trailingComma": "none"
+  },
+  "devDependencies": {
+    "@cloudflare/next-on-pages": "^1.8.5",
+    "wrangler": "^3.25.0"
   }
 }

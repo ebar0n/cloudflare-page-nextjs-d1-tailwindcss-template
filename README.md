@@ -10,7 +10,7 @@
 <div align="center">
 <a href="http://admin-dash-template.vercel.sh/">Demo</a>
 <span> · </span>
-<a href="https://vercel.com/templates/next.js/admin-dashboard-tailwind-planetscale-react-nextjs">Clone & Deploy</a>
+<a href="https://github.com/ebar0n/cloudflare-page-nextjs-d1-tailwindcss-template">Clone</a>
 <span>
 </div>
 
@@ -20,18 +20,22 @@ This is a starter template using the following stack:
 
 - Framework - [Next.js 14](https://nextjs.org/14)
 - Language - [TypeScript](https://www.typescriptlang.org)
-- Auth - [NextAuth.js](https://next-auth.js.org)
-- Database - [Vercel Postgres](https://vercel.com/postgres)
-- Deployment - [Vercel](https://vercel.com/docs/concepts/next.js/overview)
+- Database - [Cloudflare D1](https://developers.cloudflare.com/d1/)
+- Deployment - [Cloudflare Pages](https://developers.cloudflare.com/pages)
 - Styling - [Tailwind CSS](https://tailwindcss.com)
 - Components - [Tremor](https://www.tremor.so)
-- Analytics - [Vercel Analytics](https://vercel.com/analytics)
 - Linting - [ESLint](https://eslint.org)
 - Formatting - [Prettier](https://prettier.io)
 
 This template uses the new Next.js App Router. This includes support for enhanced layouts, colocation of components, tests, and styles, component-level data fetching, and more.
 
 ## Getting Started
+
+> Node version: v19.9.0 or later
+
+```
+yarn install
+```
 
 During the deployment, Vercel will prompt you to create a new Postgres database. This will add the necessary environment variables to your project.
 
