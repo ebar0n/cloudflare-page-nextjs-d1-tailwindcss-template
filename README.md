@@ -68,7 +68,6 @@ Read
 npx wrangler d1 execute demo-from-pages --command  "select * from users limit 1;"
 ```
 
-
 Finally, run the following commands to start the development server:
 
 ```
