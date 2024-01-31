@@ -46,5 +46,8 @@
     "drizzle-kit": "^0.20.13",
     "vercel": "^33.4.1",
     "wrangler": "^3.25.0"
+  },
+  "resolutions": {
+    "string-width": "4.2.3"
   }
 }
