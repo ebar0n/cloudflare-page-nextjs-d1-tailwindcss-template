@@ -7,7 +7,8 @@
     "start": "next start",
     "lint": "next lint",
     "pages:build": "npx @cloudflare/next-on-pages",
-    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2023-12-18 --compatibility-flag=nodejs_compat"
+    "pages:dev": "npx wrangler pages dev .vercel/output/static --compatibility-date=2023-12-18 --compatibility-flag=nodejs_compat --d1 DB=226f2354-d837-40e1-9957-94941fc47967",
+    "generate": "drizzle-kit generate:sqlite --schema=app/db/schema.ts --out=app/db/drizzle"
   },
   "dependencies": {
     "@headlessui/react": "^1.7.17",
@@ -19,6 +20,7 @@
     "@types/react-dom": "18.2.14",
     "@vercel/analytics": "^1.1.1",
     "autoprefixer": "^10.4.16",
+    "drizzle-orm": "^0.29.3",
     "eslint": "8.52.0",
     "eslint-config-next": "14.0.0",
     "js-cookie": "^3.0.5",
@@ -40,6 +42,10 @@
   },
   "devDependencies": {
     "@cloudflare/next-on-pages": "^1.8.5",
+    "@cloudflare/workers-types": "^4.20240129.0",
+    "@types/better-sqlite3": "^7.6.9",
+    "drizzle-kit": "^0.20.13",
+    "vercel": "^33.4.1",
     "wrangler": "^3.25.0"
   }
 }

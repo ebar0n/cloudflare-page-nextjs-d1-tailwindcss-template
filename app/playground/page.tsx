@@ -3,6 +3,8 @@
 import { Card, Metric, Text, Title, BarList, Flex, Grid } from '@tremor/react';
 import Chart from './chart';
 
+export const runtime = 'edge';
+
 const website = [
   { name: '/home', value: 1230 },
   { name: '/contact', value: 751 },

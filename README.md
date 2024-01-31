@@ -21,6 +21,7 @@ This is a starter template using the following stack:
 - Framework - [Next.js 14](https://nextjs.org/14)
 - Language - [TypeScript](https://www.typescriptlang.org)
 - Database - [Cloudflare D1](https://developers.cloudflare.com/d1/)
+- ORM - [Drizzle orm](https://orm.drizzle.team/)
 - Deployment - [Cloudflare Pages](https://developers.cloudflare.com/pages)
 - Styling - [Tailwind CSS](https://tailwindcss.com)
 - Components - [Tremor](https://www.tremor.so)
@@ -33,34 +34,41 @@ This template uses the new Next.js App Router. This includes support for enhance
 
 > Node version: v19.9.0 or later
 
+
+Install
+
 ```
 yarn install
+npx wrangler d1 create demo-from-pages
+# Replace the output in `wrangler.toml`
 ```
 
-During the deployment, Vercel will prompt you to create a new Postgres database. This will add the necessary environment variables to your project.
-
-Inside the Vercel Postgres dashboard, create a table based on the schema defined in this repository.
-
+Create migrations
+> Only if you update `app/db/schema.tsx`
 ```
-CREATE TABLE users (
-  id SERIAL PRIMARY KEY,
-  email VARCHAR(255) NOT NULL,
-  name VARCHAR(255),
-  username VARCHAR(255)
-);
+yarn generate
+```
+
+Apply migrations
+```
+npx wrangler d1 execute demo-from-pages --file=app/db/drizzle/0000_known_fixer.sql
 ```
 
 Insert a row for testing:
+```
+npx wrangler d1 execute demo-from-pages --command  "INSERT INTO users (email, name, username) VALUES ('me@site.com', 'Me', 'username');"
+```
 
+Read
 ```
-INSERT INTO users (id, email, name, username) VALUES (1, 'me@site.com', 'Me', 'username');
+npx wrangler d1 execute demo-from-pages --command  "select * from users limit 1;"
 ```
+
 
 Finally, run the following commands to start the development server:
 
 ```
-pnpm install
-pnpm dev
+yarn pages:dev
 ```
 
 You should now be able to access the application at http://localhost:3000.

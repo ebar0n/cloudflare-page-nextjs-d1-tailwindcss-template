@@ -3,12 +3,18 @@ import { Card, Title, Text } from '@tremor/react';
 import Search from './search';
 import UsersTable from './table';
 
+export const runtime = 'edge';
+
 interface User {
   id: number;
   name: string;
   username: string;
   email: string;
 }
+
+// interface Env {
+//   DB: D1Database;
+// }
 
 export default async function IndexPage({
   searchParams
@@ -22,6 +28,14 @@ export default async function IndexPage({
   //   WHERE name ILIKE ${'%' + search + '%'};
   // `;
   // const users = result.rows as User[];
+  console.log('Connecting to database...');
+  const db = process.env.DB;
+  console.log(db);
+  // const stmt = db.prepare('SELECT * FROM users');
+	// const {results} = await stmt.all();
+  // console.log(results);
+  console.log('Closed database connection.');
+
   const users: User[] = [];
 
   return (
