@@ -21,7 +21,7 @@ This is a starter template using the following stack:
 - Framework - [Next.js 14](https://nextjs.org/14)
 - Language - [TypeScript](https://www.typescriptlang.org)
 - Database - [Cloudflare D1](https://developers.cloudflare.com/d1/)
-> Love for [Cloudflare Community](https://community.cloudflare.com/t/nextjs-pages-application-with-d1-bindings/595958), this made it possible in a simple way 
+> Love for [Cloudflare Community](https://community.cloudflare.com/t/nextjs-pages-application-with-d1-bindings/595958), this made it possible in a simple way
 - ORM - [Drizzle orm](https://orm.drizzle.team/)
 - Deployment - [Cloudflare Pages](https://developers.cloudflare.com/pages)
 - Styling - [Tailwind CSS](https://tailwindcss.com)
@@ -39,6 +39,7 @@ This template uses the new Next.js App Router. This includes support for enhance
 Install
 
 ```
+yarn set version 3.x
 yarn install
 npx wrangler d1 create demo-from-pages
 # Replace the output in `wrangler.toml`
@@ -89,5 +90,5 @@ NODE_VERSION=v19.9.0
 ```
 npx wrangler d1 create demo-from-pages
 ```
-6. Change Build system version from 2 to 1
-7. Retry deploy
+5. Enable cache
+6. Retry deploy
