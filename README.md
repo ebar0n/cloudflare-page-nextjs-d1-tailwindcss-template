@@ -77,7 +77,7 @@ You should now be able to access the application at http://localhost:3000.
 
 ## Deploy into Cloudflare Pages
 
-1. Create proyect into Cloudflare Pages (connect from github and it's okay if the first deployment fails)
+1. Create project in Cloudflare Pages (connect from github and it's okay if the first deployment fails)
 2. Set Compatibility flags `nodejs_compat`
 3. Set Variables:
 ```
@@ -88,6 +88,5 @@ NODE_VERSION=v19.9.0
 ```
 npx wrangler d1 create demo-from-pages
 ```
-5. Enable Build cache
 6. Change Build system version from 2 to 1
 7. Retry deploy
