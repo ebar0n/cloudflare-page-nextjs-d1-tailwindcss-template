@@ -21,6 +21,7 @@ This is a starter template using the following stack:
 - Framework - [Next.js 14](https://nextjs.org/14)
 - Language - [TypeScript](https://www.typescriptlang.org)
 - Database - [Cloudflare D1](https://developers.cloudflare.com/d1/)
+> Love for [Cloudflare Community](https://community.cloudflare.com/t/nextjs-pages-application-with-d1-bindings/595958), this made it possible in a simple way 
 - ORM - [Drizzle orm](https://orm.drizzle.team/)
 - Deployment - [Cloudflare Pages](https://developers.cloudflare.com/pages)
 - Styling - [Tailwind CSS](https://tailwindcss.com)
