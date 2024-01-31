@@ -33,12 +33,13 @@ This template uses the new Next.js App Router. This includes support for enhance
 
 ## Getting Started
 
-> Node version: v19.9.0 or later
-
+> Node version: v20.11.0 or later
 
 Install
 
 ```
+nvm install 20
+nvm use 20
 yarn set version 3.x
 yarn install
 npx wrangler d1 create demo-from-pages
@@ -81,14 +82,9 @@ You should now be able to access the application at http://localhost:3000.
 
 1. Create project in Cloudflare Pages (connect from github and it's okay if the first deployment fails)
 2. Set Compatibility flags `nodejs_compat`
-3. Set Variables:
-```
-NODE_ENV=production
-NODE_VERSION=v19.9.0
-```
-4. Config D1 database bindings (connect one db for each env)
+3. Config D1 database bindings (connect one db for each env)
 ```
 npx wrangler d1 create demo-from-pages
 ```
-5. Enable cache
-6. Retry deploy
+4. Enable cache
+5. Retry deploy
