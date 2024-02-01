@@ -41,6 +41,7 @@ Install
 nvm install 20
 nvm use 20
 yarn set version 3.x
+yarn config set nodeLinker node-modules
 yarn install
 npx wrangler d1 create demo-from-pages
 # Replace the output in `wrangler.toml`
